@@ -96,6 +96,23 @@ public class OrderServlet extends BaseServlet {
 		return "f:/adminjsps/order_detail.jsp";
 	}
 	
+	public String toPay(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/*
+		 * 1. 得到oid参数 2. 使用oid调用service方法得到Order 3.
+		 * 保存到request域，转发到/jsps/order/desc.jsp
+		 */
+		String oid = request.getParameter("oid");
+		Order order = orderService.findByOid(oid);
+		List<Address> addressList = addressService.findByUser(order.getOwner().getUid());
+		request.setAttribute("addressList", addressList);
+		request.setAttribute("order", order);
+
+		return "f:/jsps/tureorder.jsp";
+	}
+	
+	
+	
 	/**
 	 * 查询我的订单
 	 * 
@@ -115,7 +132,7 @@ public class OrderServlet extends BaseServlet {
 		User user = (User) request.getSession().getAttribute("session_user");
 		List<Order> orderList = orderService.myOrders(user.getUid());
 		request.setAttribute("orderList", orderList);
-		return "f:/jsps/order/list.jsp";
+		return "f:/jsps/myOrder.jsp";
 	}
 	
 	/**

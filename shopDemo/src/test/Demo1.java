@@ -87,4 +87,10 @@ public class Demo1 {
 		System.out.println(orderService.findByOid("69A101AAB3E74A8AAC27294C73572B61"));
 	}
 	
+	@Test 
+	public void fun11(){
+		OrderDao orderDao = new OrderDao();
+		System.out.println(orderDao.findByUid("1"));
+	}
+	
 }

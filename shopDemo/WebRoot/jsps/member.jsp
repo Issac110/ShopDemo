@@ -33,8 +33,8 @@
 
 	</div>
 	<ul class="member-nav">
-		<li><a href=""><i class="am-icon-map-marker"></i><span>收货地址</span></a></li>
-		<li><a href=""><i class="am-icon-newspaper-o"></i><span>我的订单</span></a></li>
+		<li><a href="<c:url value = '/jsps/address.jsp'/>"><i class="am-icon-map-marker"></i><span>收货地址</span></a></li>
+		<li><a href="<c:url value = '/OrderServlet?method=myOrders'/>"><i class="am-icon-newspaper-o"></i><span>我的订单</span></a></li>
 		<li><a href="<c:url value = '/jsps/cart.jsp' /> "><i
 				class="am-icon-cart-arrow-down"></i><span>购物车</span></a></li>
 		<li><a href=""><i class="am-icon-bell-o"></i><span>系统通知</span></a></li>
