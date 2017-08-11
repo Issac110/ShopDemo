@@ -130,6 +130,13 @@ public class OrderServlet extends BaseServlet {
 		 * 把订单列表保存到request域中，转发到/jsps/order/list.jsp
 		 */
 		User user = (User) request.getSession().getAttribute("session_user");
+		/**
+		 * 判断用户是否登录或session是否已过时，如果是，则跳转到登录页面
+		 */
+		if(user==null){
+			request.setAttribute("msg", "请先登录！！");
+			return "f:/jsps/login.jsp";
+		}
 		List<Order> orderList = orderService.myOrders(user.getUid());
 		request.setAttribute("orderList", orderList);
 		return "f:/jsps/myOrder.jsp";

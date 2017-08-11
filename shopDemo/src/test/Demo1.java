@@ -92,5 +92,10 @@ public class Demo1 {
 		OrderDao orderDao = new OrderDao();
 		System.out.println(orderDao.findByUid("1"));
 	}
+	@Test 
+	public void fun12(){
+		AddressDao addressDao = new AddressDao();
+		System.out.println(addressDao.findByUser("1"));
+	}
 	
 }

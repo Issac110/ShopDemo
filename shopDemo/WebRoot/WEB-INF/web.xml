@@ -32,6 +32,11 @@
     <servlet-name>AdminAddGoodServlet</servlet-name>
     <servlet-class>cn.issac.good.web.servlet.AdminAddGoodServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AddressServlet</servlet-name>
+    <servlet-class>cn.issac.address.web.servlet.AddressServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>GoodServlet</servlet-name>
     <url-pattern>/GoodServlet</url-pattern>
@@ -63,6 +68,10 @@
   <servlet-mapping>
     <servlet-name>AdminAddGoodServlet</servlet-name>
     <url-pattern>/AdminAddGoodServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddressServlet</servlet-name>
+    <url-pattern>/AddressServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

@@ -16,4 +16,17 @@ public class AddressService {
 		
 		return addressDao.findByAid(aid);
 	}
+
+	public void add(Address address) {
+		addressDao.add(address);
+	}
+
+	public void update(Address address) {
+		addressDao.update(address);
+		
+	}
+
+	public void delete(String aid) {
+		addressDao.delete(aid);
+	}
 }

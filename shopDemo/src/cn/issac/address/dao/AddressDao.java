@@ -38,4 +38,36 @@ public class AddressDao {
 			throw new RuntimeException(e);
 		}
 	}
+
+	public void add(Address address) {
+		try {
+			String sql  = "insert into address values(?,?,?,?,?,?)";
+			qr.update(sql, address.getAid(),address.getName(),address.getPhone(),address.isDefault(),
+					address.getUser().getUid(),address.getAddressName());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
+	public void update(Address address) {
+		try {
+			String sql  = "update address set name = ?,phone = ? ,isDefault= ?,uid = ?,addressName = ? where aid = ? ";
+			qr.update(sql, address.getName(),address.getPhone(),address.isDefault(),
+					address.getUser().getUid(),address.getAddressName(),address.getAid());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
+
+	public void delete(String aid) {
+		try {
+			String sql  = "delete from address where aid = ?";
+			qr.update(sql,aid);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
 }
